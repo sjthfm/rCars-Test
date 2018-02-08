@@ -1,7 +1,8 @@
 public class VehicleStat {
 	
-	private String SIPP, Supplier, Name, Rating, Price;
+	private String SIPP, Supplier, Name, Rating, Price, carType;
 	private char[] SplitSIPP;
+	
 	
 	public VehicleStat(String SIPP,String Price,String Supplier,String Name,String Rating) {
 		this.setSIPP(SIPP);
@@ -63,5 +64,12 @@ public class VehicleStat {
 
 	public void setSplitSIPP(char[] splitSIPP) {
 		SplitSIPP = splitSIPP;
+	}
+	
+	public void setCarType (String carType) {
+		this.carType = carType;
+	}
+	public String getCarType () {
+		return carType;
 	}
 }

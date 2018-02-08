@@ -4,7 +4,7 @@ import java.util.TreeMap;
 /**
  * @author sjthome
  * Send all values as double to string, and let the tree map sort out the prices from low to high for you.
- * 	Print out as well.
+ * 	Print out as well. Admittedly should've used bubble sort but this wasn't specified.
  */
 public class PriceOrderOfCar {
 	ArrayList<VehicleStat> vehicles;

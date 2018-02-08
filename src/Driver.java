@@ -10,6 +10,8 @@ public class Driver {
 		PriceOrderOfCar priceOrder = new PriceOrderOfCar(vehicles); // Prints out order of cars by price
 		
 		CarSIPP 		carSIPP    = new CarSIPP(vehicles); //specification of the vehicles based on their SIPP
+		
+		SupplierRating supRating   = new SupplierRating(vehicles);
 	}
 
 }

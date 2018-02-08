@@ -27,14 +27,13 @@ public class CarSIPP {
 			
 			String CarType = SIPPTable.get(vehicles.get(i).returnSIPPByIndex(0));
 			
-			
-		//	System.out.println(vehicles.get(i).returnSIPPByIndex(1));
-			
+					
 			if (vehicles.get(i).returnSIPPByIndex(1) == 'P') {
 				System.out.print(" Pick up - ");
 			} else {
 				String DoorsOrType = SIPPTable.get(vehicles.get(i).returnSIPPByIndex(1));
 				System.out.print(DoorsOrType + " - ");
+				vehicles.get(i).setCarType(DoorsOrType);
 			}
 			
 			if (vehicles.get(i).returnSIPPByIndex(2) == 'M') {
@@ -47,10 +46,6 @@ public class CarSIPP {
 			String FuelAndAC = SIPPTable.get(vehicles.get(i).returnSIPPByIndex(3));
 			System.out.println(FuelAndAC + " \n");
 		}
-	}
-	
-	private void determineSIPPStats(VehicleStat vehicleStat) {
-		
 	}
 	
 	private void populateSIPPTable() {
