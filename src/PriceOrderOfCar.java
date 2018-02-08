@@ -12,6 +12,7 @@ public class PriceOrderOfCar {
 
 	public PriceOrderOfCar(ArrayList<VehicleStat> vehicles) {
 		this.vehicles = vehicles;
+		System.out.print("\ncar prices \n\n");
 		this.storePrices();
 	}
 

@@ -12,6 +12,8 @@ public class Driver {
 		CarSIPP 		carSIPP    = new CarSIPP(vehicles); //specification of the vehicles based on their SIPP
 		
 		SupplierRating supRating   = new SupplierRating(vehicles);
+		
+		VehicleScore   vehicleScore= new VehicleScore(vehicles);
 	}
 
 }

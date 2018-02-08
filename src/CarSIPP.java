@@ -44,8 +44,10 @@ public class CarSIPP {
 			}
 			
 			String FuelAndAC = SIPPTable.get(vehicles.get(i).returnSIPPByIndex(3));
-			System.out.println(FuelAndAC + " \n");
+			System.out.println(FuelAndAC);
 		}
+		
+		System.out.print("\n");
 	}
 	
 	private void populateSIPPTable() {
