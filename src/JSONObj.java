@@ -62,10 +62,10 @@ public class JSONObj {
 			        JSONObject indivVehicle = (JSONObject) arrOfVehicles.get(i);
 			        
 			        String SIPP 	= ((String)indivVehicle.get("sipp"));
-			        String Price 	= ((String)indivVehicle.get("price"));
+			        String Price 	= ((String)indivVehicle.get("price").toString());
 			        String Supplier = ((String)indivVehicle.get("supplier"));
 			        String Name 	= ((String)indivVehicle.get("name"));
-			        String Rating 	= ((String)indivVehicle.get("rating"));
+			        String Rating 	= ((String)indivVehicle.get("rating").toString());
 			        
 			        VehicleStat vehicleInfo = new VehicleStat(SIPP, Price, Supplier, Name, Rating);
 			        

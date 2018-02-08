@@ -1,14 +1,71 @@
-
 public class VehicleStat {
 	
-	private String SIPP, Price, Supplier, Name, Rating;
+	private String SIPP, Supplier, Name, Rating, Price;
+	private char[] SplitSIPP;
 	
 	public VehicleStat(String SIPP,String Price,String Supplier,String Name,String Rating) {
-		this.SIPP 		= SIPP;
-		this.Price 		= Price;
-		this.Supplier 	= Supplier;
-		this.Name 		= Name;
-		this.Rating 	= Rating;
+		this.setSIPP(SIPP);
+		this.setPrice(Price);
+		this.setSupplier(Supplier);
+		this.setName(Name);
+		this.setRating(Rating);
+		
+		setSplitSIPP(SIPP.toCharArray());
+	}
+
+	public String getSIPP() {
+		return SIPP;
+	}
+
+	public void setSIPP(String sIPP) {
+		SIPP = sIPP;
+	}
+
+	public String getPrice() {
+		return Price;
+	}
+
+	public void setPrice(String price) {
+		Price = price;
+	}
+
+	public String getSupplier() {
+		return Supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		Supplier = supplier;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getRating() {
+		return Rating;
+	}
+
+	public void setRating(String rating) {
+		Rating = rating;
+	}
+
+	public char[] getSplitSIPP() {
+		return SplitSIPP;
 	}
 	
+	public char returnSIPPByIndex(int index) {
+		if (SplitSIPP.length <= index) {
+			return SplitSIPP[index];
+		} else {
+			return '0';
+		}
+	}
+
+	public void setSplitSIPP(char[] splitSIPP) {
+		SplitSIPP = splitSIPP;
+	}
 }
