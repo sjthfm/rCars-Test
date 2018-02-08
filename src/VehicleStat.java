@@ -58,11 +58,7 @@ public class VehicleStat {
 	}
 	
 	public char returnSIPPByIndex(int index) {
-		if (SplitSIPP.length <= index) {
 			return SplitSIPP[index];
-		} else {
-			return '0';
-		}
 	}
 
 	public void setSplitSIPP(char[] splitSIPP) {
