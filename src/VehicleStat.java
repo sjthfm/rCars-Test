@@ -3,7 +3,9 @@ public class VehicleStat {
 	private String SIPP, Supplier, Name, Rating, Price, carType;
 	private char[] SplitSIPP;
 	
-	
+	/** I couldn't use a hash map to store all of the values uniquely, so a class
+	 * to hold the variables seemed suitable per car. This has allowed
+	 * for a much cleaner programming interface*/
 	public VehicleStat(String SIPP,String Price,String Supplier,String Name,String Rating) {
 		this.setSIPP(SIPP);
 		this.setPrice(Price);
@@ -14,6 +16,7 @@ public class VehicleStat {
 		setSplitSIPP(SIPP.toCharArray());
 	}
 
+	/** Getters and setters, as per java 101 */
 	public String getSIPP() {
 		return SIPP;
 	}

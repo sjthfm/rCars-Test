@@ -9,13 +9,16 @@ import java.util.TreeMap;
 public class PriceOrderOfCar {
 	ArrayList<VehicleStat> vehicles;
 	TreeMap<Double, String> test = new TreeMap<Double, String>();
-
+	/** insert vehicle array */
 	public PriceOrderOfCar(ArrayList<VehicleStat> vehicles) {
 		this.vehicles = vehicles;
 		System.out.print("\ncar prices \n\n");
 		this.storePrices();
 	}
 
+	/** A tree map sorts out these values by default, so post in price and just print it out value to key
+	 * instead of key to value. Some sort of sort (i.e. bubble) would've done also, but this is somewhat
+	 * easier... */
 	public void storePrices() {
 		for (int i = 0; i != vehicles.size(); i++) {
 			test.put(Double.parseDouble(vehicles.get(i).getPrice()), vehicles.get(i).getName());
@@ -23,10 +26,18 @@ public class PriceOrderOfCar {
 		this.printInOrder();
 	}
 
+	StringBuilder returnPrices = new StringBuilder();
+
 	public void printInOrder() {
 		for (Double key : test.keySet()) {
 			String value = test.get(key).toString();
 			System.out.println(value + " = =  " + key);
+			returnPrices.append(value + " = " + key + " <br />");
 		}
+	}
+
+	/** returns all of the prices as a string, this is for rest api though. */
+	public String returnPrices() {
+		return returnPrices.toString();
 	}
 }

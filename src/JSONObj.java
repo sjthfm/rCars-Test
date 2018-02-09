@@ -3,13 +3,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 
 public class JSONObj {
 	
@@ -20,7 +17,17 @@ public class JSONObj {
 	public JSONObj() {
 		this.downloadJSON();
 	}
-	
+
+	/** Contacts the rental cars website and asks for the json file.
+	 * If the http response is code 200, proceeds to
+	 * download the json and separate the array out into
+	 * useful informative parts.
+	 *
+	 * It then puts them into individual objects in which we can store
+	 * and access all of the information readily and easily
+	 *
+	 *
+	 * If HTTPCODE != 200 then returns error message */
 	public void downloadJSON() {
 	    try {
 			URL url = new URL(jsonURL);

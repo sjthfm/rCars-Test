@@ -17,6 +17,7 @@ public class SupplierRating {
 	private HashMap<String, VehicleStat> supplierVehicles = new HashMap<String, VehicleStat>();
 	private TreeMap<String, String> organisedRatingMap = new TreeMap<String, String>();
 
+	/** vehicle list */
 	public SupplierRating(ArrayList<VehicleStat> vehicles) {
 		this.vehicles = vehicles;
 		this.getVehicleNames();
@@ -24,7 +25,8 @@ public class SupplierRating {
 		this.getRawRatings();
 		this.printInOrder();
 	}
-	
+
+	/** add vehicles names to an array */
 	public void getVehicleNames() {
 	    Set<String> vehicleNames = new HashSet<String>();
 		for (int i = 0; i != vehicles.size(); i++) {   
@@ -34,13 +36,17 @@ public class SupplierRating {
 	}
 	
 	
-	
+	/** supplier + name */
 	public void getVehicles() {
 		for (int i = 0; i != vehicles.size(); i++) {
 			supplierVehicles.put(vehicles.get(i).getSupplier()+" "+vehicles.get(i).getName(), vehicles.get(i));
 		}		
 	}
-	
+	/** Basic "is this bigger than that"
+	 *
+	 * I use the current rating and differentiate the id with other details,
+	 * this way I can take advantage of the auto-sort properties of a tree map
+	 * whilst still giving out the correct information */
 	public void getRawRatings() {
 		String currentRating, SuppRating, CarName, currentCar;
 		for (int j = 0; j != vehicleNames.length; j++) {
@@ -59,11 +65,19 @@ public class SupplierRating {
 		}
 	//	System.out.println(test);
 	}
-	
+
+	StringBuilder ratings = new StringBuilder();
+	/** Self explanatory. It's auto sorted so just print.  */
 	public void printInOrder() {
 		for (String key : organisedRatingMap.keySet()) {
 		//	String value = test.get(key).toString();
 			System.out.println(key.substring(4, key.length())); // I could've added this to any type of data set and then printed from there if it was required.
+			ratings.append(key.substring(4, key.length())+" <br />");
 		}
+	}
+
+	/** for restapi */
+	public String returnRatings() {
+		return ratings.toString();
 	}
 }

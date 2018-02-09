@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeMap;
@@ -16,6 +15,7 @@ public class VehicleScore {
 		this.getRawRatings();
 		this.printInOrder();
 	}
+	/** un-necessary but possibly useful in the future  */
 	public void getVehicleNames() {
 	    Set<String> vehicleNames = new HashSet<String>();
 		for (int i = 0; i != vehicles.size(); i++) {   
@@ -25,7 +25,7 @@ public class VehicleScore {
 	}
 	
 
-	
+	/** Rates the car based on arbitrary character values... */
 	public void getRawRatings() {
 		String CarName, Supplier;
 				
@@ -58,15 +58,32 @@ public class VehicleScore {
 		  }
 		
 	}
-	
+
+	private ArrayList<String> printArr = new ArrayList<String>();
+	/** Used two maps because one started to get confused about how to sort
+	 *  the values correctly, hence the if in getRawRatings placing > 10s in a different
+	 *  map... */
 	public void printInOrder() {
 		for (String key : organisedRatingMap.keySet()) {
 			String value = organisedRatingMap.get(key).toString();
-			System.out.println(value); 
+			System.out.println(value);
+			printArr.add(value);
+
 		}
 		for (String key : organisedRatingMap2.keySet()) {
 			String value = organisedRatingMap2.get(key).toString();
-			System.out.println(value); 
+			System.out.println(value);
+
+			printArr.add(value);
 		}
-	}	
+	}
+	/** rest api: basically print in order... */
+	public String outputArray() {
+		StringBuilder sb = new StringBuilder();
+		for(String elem : printArr){
+			sb.append(elem+" <br />"+System.lineSeparator());
+		}
+		return sb.toString();
+	}
+
 }
